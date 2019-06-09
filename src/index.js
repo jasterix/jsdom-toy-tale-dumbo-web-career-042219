@@ -56,6 +56,7 @@ newToyForm.addEventListener('submit', (event) => {
     newToyForm.reset()
 })
 ///////////////////////////////Click to open or hide the toyForm//////////////////////
+/////////////////////////////////////////////ADD BUTTON HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 addBtn.addEventListener('click', () => {
   // hide & seek with the form
   addToy = !addToy
@@ -92,6 +93,8 @@ toyCollection.addEventListener('click', (event) => {
         pTag.innerHTML = `${toydata.likes} Likes`
       })
   }
+
+  /////////////////////////////////////////////DELETE BUTTON HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   else if (event.target.className == 'del-btn') {
     console.log(buttonTag.className)
     fetch(`${url}/${toyId}`, {
