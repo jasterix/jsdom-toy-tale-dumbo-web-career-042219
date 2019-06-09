@@ -1,11 +1,14 @@
-const addBtn = document.querySelector('#new-toy-btn')
+/////////////////////////////HTML SECTIONS////////////////////////////////////////////////////////
 const toyForm = document.querySelector('.container')
 const newToyForm = document.querySelector('.add-toy-form')
 const toyCollection = document.querySelector('#toy-collection')
-const nameInput = document.querySelector('name-input')
-const imagInput = document.querySelector('image-input')
+
+////////////////////////////////////BUTTONS/////////////////////////////////////////////////
+const addBtn = document.querySelector('#new-toy-btn')
 const likeButton = document.querySelector('.like-btn')
 const deleteButton = document.querySelector('.del-btn')
+
+//////////////////////////////////////////////////////////////////URL and others////////////////
 const url = 'http://localhost:3000/toys'
 let addToy = false
 
@@ -70,13 +73,10 @@ addBtn.addEventListener('click', () => {
 
 ////////////////////////////Add new likes, Delete Toy///////////////////////
 toyCollection.addEventListener('click', (event) => {
-  const buttonTag = event.target
-
-  console.log(buttonTag.className)
   let toyId = event.target.parentElement.dataset.id
-
-  const pTag = buttonTag.parentElement.querySelector('p')
+  const pTag = event.target.parentElement.querySelector('p')
   const likesText = pTag.innerText
+
   if (event.target.className === "like-btn") {
     let updatedLikes = parseInt(likesText)
     updatedLikes++
